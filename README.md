@@ -1,6 +1,6 @@
 # crowdstrike-interview
 
-![Crowdstrike GIF](https://www.nativegd.com/crowdstrike1)
+![Crowdstrike GIF](https://images.squarespace-cdn.com/content/v1/522ea6f5e4b074ba686e497c/1457886542240-GWBCX6C7PKO86N2WR479/bird_monitor.jpg?format=1000w)
 
 ## Hi, and thank you for giving me the chance to interview with you.
 
