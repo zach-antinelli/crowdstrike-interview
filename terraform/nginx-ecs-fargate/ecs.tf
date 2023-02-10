@@ -13,6 +13,13 @@ resource "aws_security_group" "ecs_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    protocol    = "tcp"
+    from_port   = 443
+    to_port     = 443
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   egress {
     protocol    = "-1"
     from_port   = 0
@@ -39,9 +46,15 @@ resource "aws_ecs_service" "ecs_service" {
   }
 
   load_balancer {
-    target_group_arn = aws_lb_target_group.ecs_lb_tg.arn
+    target_group_arn = aws_lb_target_group.http.arn
     container_name   = "nginx"
     container_port   = 80
+  }
+
+  load_balancer {
+    target_group_arn = aws_lb_target_group.https.arn
+    container_name   = "nginx"
+    container_port   = 443
   }
 }
 
@@ -60,6 +73,11 @@ resource "aws_ecs_task_definition" "ecs_task" {
           "protocol": "tcp",
           "containerPort": 80,
           "hostPort": 80
+        },
+        {
+          "protocol": "tcp",
+          "containerPort": 443,
+          "hostPort": 443
         }
       ]
     }
