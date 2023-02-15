@@ -1,0 +1,54 @@
+resource "aws_lb" "ecs_lb" {
+  name               = "ecs-lb"
+  load_balancer_type = "network"
+  internal           = false
+  security_groups    = [aws_security_group.ecs_sg.id]
+  subnets            = [aws_subnet.public.id, aws_subnet.public2.id]
+
+  tags = {
+    name = "ecs-nginx"
+  }
+}
+
+resource "aws_lb_target_group" "http" {
+  name     = "ecs-lb-tg-http"
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = aws_vpc.vpc.id
+}
+
+resource "aws_lb_listener" "http" {
+  load_balancer_arn = aws_lb.ecs_lb.arn
+  port              = 80
+  protocol          = "HTTP"
+
+  default_action {
+    type = "redirect"
+
+    redirect {
+      port        = "443"
+      protocol    = "TCP"
+      status_code = "HTTP_301"
+    }
+  }
+}
+
+resource "aws_lb_target_group" "https" {
+  name     = "ecs-lb-tg-https"
+  port     = 443
+  protocol = "TCP"
+  vpc_id   = aws_vpc.vpc.id
+}
+
+resource "aws_lb_listener" "https" {
+  load_balancer_arn = aws_lb.ecs_lb.arn
+  port              = 443
+  protocol          = "TCP"
+  certificate_arn   = "arn:aws:acm:us-west-2:984125468440:certificate/5e990d18-d2b6-44cf-803a-4cadfaa3c9db"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.https.arn
+  }
+}
+

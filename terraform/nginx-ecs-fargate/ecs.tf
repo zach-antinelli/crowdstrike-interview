@@ -42,20 +42,20 @@ resource "aws_ecs_service" "ecs_service" {
   network_configuration {
     assign_public_ip = true
     security_groups  = [aws_security_group.ecs_sg.id]
-    subnets          = [aws_subnet.public.id]
+    subnets          = [aws_subnet.public.id, aws_subnet.public2.id]
   }
 
-  load_balancer {
-    target_group_arn = aws_lb_target_group.http.arn
-    container_name   = "nginx"
-    container_port   = 80
-  }
-
-  load_balancer {
-    target_group_arn = aws_lb_target_group.https.arn
-    container_name   = "nginx"
-    container_port   = 443
-  }
+  #  load_balancer {
+  #    target_group_arn = aws_lb_target_group.http.arn
+  #    container_name   = "nginx"
+  #    container_port   = 80
+  #  }
+  #
+  #  load_balancer {
+  #    target_group_arn = aws_lb_target_group.https.arn
+  #    container_name   = "nginx"
+  #    container_port   = 443
+  #  }
 }
 
 resource "aws_ecs_task_definition" "ecs_task" {
