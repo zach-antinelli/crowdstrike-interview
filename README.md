@@ -13,4 +13,3 @@ I am hosting a copy of my resume at https://crowdstrike-interview.zachantinelli.
 - AWS ECS cluster (fargate) using Docker container image from ECR
     - Deployed with Terraform
 - DNS With AWS Route 53
-- Using Cloudflare for CDN
