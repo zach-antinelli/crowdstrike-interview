@@ -64,7 +64,7 @@ def interactive():
         sys.exit('\nKeyboard interrupt received, exiting..')
 
 def main():
-    if len (sys.argv) > 2 :
+    if len(sys.argv) > 2 :
         print('''
 
             Incorrect parameter or amount of parameters entered.
