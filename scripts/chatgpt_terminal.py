@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
-import os
 import sys
 import openai
 
 '''
-Interact with the OpenAI API using the davinci engine    
+Interact with the OpenAI API using the davinci engine.
+
+You must set the environment variable "OPENAI_API_KEY"
     
 Usage:
             
@@ -49,7 +50,7 @@ def interactive():
     try:
         while True:
             prompt = input('chatgpt>> ')
-            if prompt == 'exit' or prompt == 'quit' or prompt == 'bye':
+            if prompt in ('exit', 'Exit', 'quit', 'Quit', 'bye', 'Bye'):
                 sys.exit()
             completions = openai.Completion.create(
                 engine="text-davinci-003",
