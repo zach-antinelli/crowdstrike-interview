@@ -83,14 +83,14 @@ def main():
 
                 python openai_terminal.py -i
 
-                python openai_terminal.py interactive
-
                 ./openai_terminal --interactive
+
+                python openai_terminal.py interactive
 
             """)
         sys.exit(1)
     input_arg = sys.argv[1]
-    if input_arg in ("interactive","-i","--interactive"):
+    if input_arg in ("-i","--interactive","interactive"):
         interactive()
     print(non_interactive(input_arg))
 
