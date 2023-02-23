@@ -10,23 +10,27 @@ You must set the environment variable "OPENAI_API_KEY"
     
 Usage:
             
-    Non-interactive:
+    Non-interactive example:
         
         python openai_terminal.py "Should I HODL?"
 
-    Interactive:
+        ./openai_terminal.py "What is love?"
 
-        python openai_terminal.py interactive
+    Interactive example:
 
         python openai_terminal.py -i
 
-            openai>> Should I HODL?
+        python openai_terminal.py interactive
 
-            It depends on your individual goals and risk tolerance. HODLing is a strategy that involves holding a cryptocurrency 
-            for a long period of time, usually in the hopes of it increasing in value. If you are comfortable with the risks associated 
-            with cryptocurrency investing and believe that the potential rewards are worth it, then HODLing may be a good strategy for 
-            you. However, it is important to remember that cryptocurrencies are volatile and the market can be unpredictable, so it is 
-            important to do your own research and make sure you understand the risks before investing.
+        ./openai_terminal --interactive
+
+        openai>> Should I HODL?
+
+        It depends on your individual goals and risk tolerance. HODLing is a strategy that involves holding a cryptocurrency 
+        for a long period of time, usually in the hopes of it increasing in value. If you are comfortable with the risks associated 
+        with cryptocurrency investing and believe that the potential rewards are worth it, then HODLing may be a good strategy for 
+        you. However, it is important to remember that cryptocurrencies are volatile and the market can be unpredictable, so it is 
+        important to do your own research and make sure you understand the risks before investing.
 """
 
 def non_interactive(prompt):
