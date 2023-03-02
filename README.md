@@ -2,7 +2,7 @@
 
 ## Hi, and thank you for giving me the chance to interview with you!
 
-![Crowdstrike GIF](https://images.squarespace-cdn.com/content/v1/522ea6f5e4b074ba686e497c/1457886542240-GWBCX6C7PKO86N2WR479/bird_monitor.jpg?format=350w)
+![Crowdstrike GIF](https://images.squarespace-cdn.com/content/v1/522ea6f5e4b074ba686e497c/1457886542240-GWBCX6C7PKO86N2WR479/bird_monitor.jpg?format=300w)
 
 I am hosting a copy of my resume at https://crowdstrike-interview.zachantinelli.me and a guestbook web app at https://crowdstrike-interview-eks.zachantinelli.me:3000 as a demo of some of the concepts from the job description.
 
