@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import sys
 import openai
 
@@ -88,6 +89,9 @@ def main():
                 python openai_terminal.py interactive
 
             """)
+        sys.exit(1)
+    if not "OPENAI_API_KEY" in os.environ:
+        print("API Key has not been set. Set environment variable: OPENAI_API_KEY")
         sys.exit(1)
     input_arg = sys.argv[1]
     if input_arg in ("-i","--interactive","interactive"):
