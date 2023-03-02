@@ -18,5 +18,5 @@ function get_trivia_questions() {
 }
 
 #get_trivia_questions n=50 d=hard > trivia.json
-#get_trivia_questions n=25 d=medium
+get_trivia_questions n=25 d=medium
 

@@ -64,3 +64,5 @@ function Get-TickerDetails
         return $error_details
     }
 }
+
+Get-TickerDetails -Name MSFT -Date 2/21/23 -OpenClose
