@@ -9,14 +9,15 @@ I am hosting a copy of my resume at https://crowdstrike-interview.zachantinelli.
 ## Resources used for demo sites:
 
 https://crowdstrike-interview.zachantinelli.me
-- Docker container created from Dockerfile that is running ubuntu and nginx
-    - Uploaded to ECR using Docker hub / AWS cli
 - AWS ECS cluster (fargate) using Docker container image from ECR
     - Deployed with Terraform
+- Docker container created from Dockerfile that is running ubuntu and nginx
+    - Uploaded to ECR using Docker hub / AWS cli
 - Route 53 DNS
 
 https://crowdstrike-interview-eks.zachantinelli.me:3000
 - Amazon EKS k8s cluster 
+    - Deployed with AWS CLI and kubectl
     - Web frontend 
     - Redis backend
     - Docker containers
